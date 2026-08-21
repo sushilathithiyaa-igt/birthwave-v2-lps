@@ -9,13 +9,13 @@ export function SiteFooter() {
         <div className="grid gap-10 pb-12 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.7fr_1fr] lg:gap-16">
           <div className="sm:col-span-2 lg:col-span-1">
             <Link href="/" className="mb-4 inline-flex items-center">
-              <span className="relative block h-11 w-[7.25rem] overflow-hidden rounded-xl bg-rose">
+              <span className="relative block aspect-[1439/702] h-10 overflow-hidden rounded-xl bg-rose px-3 py-2">
                 <Image
-                  src="/images/brand/birthwave-logo-white.png"
+                  src="/images/brand/birthwave-logo-white-trimmed.png"
                   alt={siteConfig.name}
                   fill
-                  sizes="116px"
-                  className="object-contain p-2"
+                  sizes="140px"
+                  className="object-contain"
                 />
               </span>
             </Link>

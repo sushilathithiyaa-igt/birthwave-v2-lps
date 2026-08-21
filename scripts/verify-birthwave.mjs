@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-import { existsSync, readFileSync, readdirSync, statSync } from "node:fs";
+import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { join, extname } from "node:path";
 
 const root = join(import.meta.dirname, "..");
@@ -118,14 +118,10 @@ for (const file of sourceFiles) {
     referencedAssets.add(match[1]);
   }
 }
-let assetsOk = true;
 for (const asset of referencedAssets) {
   const full = join(root, "public", asset);
   if (existsSync(full)) ok(`asset resolves: ${asset}`);
-  else {
-    fail(`asset missing: ${asset}`);
-    assetsOk = false;
-  }
+  else fail(`asset missing: ${asset}`);
 }
 if (referencedAssets.size === 0) fail("no local image/video assets referenced (unexpected)");
 

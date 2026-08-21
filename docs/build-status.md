@@ -26,8 +26,22 @@
 - `npm run verify:birthwave` — PASS
 - `npm run build` — PASS (all 5 routes statically generated)
 
+## Runtime/visual verification (this session)
+Checked in a real browser (dev server + a production `next start` build) at 320, 360, 390, 430,
+768, 1024, 1280 and 1440px on all five routes. No horizontal overflow at any width. Found and
+fixed two real issues along the way:
+- The header nav wrapped to two lines right around 1024–1150px (too little space for four nav
+  labels + Call + Book Appointment). Fixed by hiding the "Call" text button until `xl` (1280px)
+  and tightening nav gaps — full nav now fits on one line from `lg` (1024px) up.
+- The header's "Call"/nav text used `text-muted` against a fully transparent top state, which had
+  poor contrast on the dark-hero pages (Natural Birth, VBAC) before scrolling. Fixed by giving the
+  unscrolled header a translucent `bg-ivory/45` backdrop instead of fully transparent, so nav text
+  stays legible over any hero color.
+Also functionally verified: mobile menu open/close, FAQ accordion toggle, and a full
+`AppointmentForm` submission (validation errors, then a correctly-built `wa.me` deep link with
+the enquiry fields and the right phone number) on the production build.
+
 ## Not yet done
-- Runtime/browser visual verification across the 320–1920px range (in progress this session).
 - No dedicated `/doctors` page yet — `dr-bharathy-kandasamy.png` and `sheethal-sathya.png` are
   copied into the asset library but not placed on any page.
 - Journey-entry categories without a built page (Fertility & Preconception, Postpartum &

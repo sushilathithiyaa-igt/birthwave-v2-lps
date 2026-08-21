@@ -6,7 +6,7 @@ visually confirmed before use — none were used on filename alone.
 
 | File (this project) | Source | Used on | Why |
 |---|---|---|---|
-| `images/brand/birthwave-logo-white.png` | V1 `birthwave-logo-white.png` | Header, footer (rose badge) | Transparent white glyph — the only logo variant that works on both light and dark section backgrounds inside a colored badge |
+| `images/brand/birthwave-logo-white-trimmed.png` | V1 `birthwave-logo-white.png`, cropped to its visible content bounding box (Pillow) | Header, footer (rose badge) | The source file had ~35% transparent padding on every side, which made the wordmark render illegibly small inside the header badge; cropped tight so it fills the badge properly |
 | `images/brand/birthwave-logo-solid.png` | `~/Downloads/Birthwave logo.png` | Unused (kept for reference/print) | Canonical flattened logo with baked-in brown background; not usable directly in a responsive header |
 | `images/team/dr-santoshi-nandigam.png` | V1 | Home hero, `DoctorTrust` (all 5 pages) | Confirmed real portrait, already labeled and used in production V1 |
 | `images/team/dr-bharathy-kandasamy.png` | V1 | (available, not currently placed) | Second team portrait, reserved for a future `/doctors` page |

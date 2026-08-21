@@ -36,24 +36,24 @@ export function SiteHeader() {
       className={`fixed inset-x-0 top-0 z-30 transition-[background-color,box-shadow,backdrop-filter] duration-300 ${
         scrolled
           ? "bg-ivory/90 shadow-[0_1px_0_rgba(46,36,33,0.14)] backdrop-blur-md"
-          : "bg-transparent"
+          : "bg-ivory/45 backdrop-blur-sm"
       }`}
     >
-      <div className="mx-auto flex h-[4.75rem] w-full max-w-[1220px] items-center gap-8 px-6 sm:px-8 lg:px-12">
+      <div className="mx-auto flex h-[4.75rem] w-full max-w-[1220px] items-center gap-4 px-6 sm:px-8 lg:gap-6 lg:px-12">
         <Link href="/" className="mr-auto flex shrink-0 items-center">
-          <span className="relative block h-11 w-[7.25rem] overflow-hidden rounded-xl bg-rose">
+          <span className="relative block aspect-[1439/702] h-9 overflow-hidden rounded-xl bg-rose px-3 py-2 sm:h-10">
             <Image
-              src="/images/brand/birthwave-logo-white.png"
+              src="/images/brand/birthwave-logo-white-trimmed.png"
               alt={siteConfig.name}
               fill
-              sizes="116px"
-              className="object-contain p-2"
+              sizes="140px"
+              className="object-contain"
               priority
             />
           </span>
         </Link>
 
-        <nav aria-label="Primary navigation" className="hidden items-center gap-7 text-sm text-muted lg:flex">
+        <nav aria-label="Primary navigation" className="hidden items-center gap-4 text-sm whitespace-nowrap text-muted lg:flex xl:gap-6">
           {primaryNav.map((item) => {
             const active = pathname === item.href;
             return (
@@ -75,14 +75,14 @@ export function SiteHeader() {
           <a
             href={siteConfig.phoneHref}
             data-event="header_call"
-            className="inline-flex min-h-[2.7rem] items-center rounded-full border border-ink/12 bg-white/50 px-4 text-sm font-semibold text-ink transition-colors hover:border-rose hover:bg-white"
+            className="hidden min-h-[2.7rem] items-center rounded-full border border-ink/12 bg-white/50 px-4 text-sm font-semibold whitespace-nowrap text-ink transition-colors hover:border-rose hover:bg-white xl:inline-flex"
           >
             Call
           </a>
           <a
             href="#book"
             data-event="header_book"
-            className="inline-flex min-h-[2.7rem] items-center rounded-full bg-rose px-5 text-sm font-semibold text-white shadow-[0_10px_24px_-6px_rgba(202,149,133,0.55)] transition-colors hover:bg-deep"
+            className="inline-flex min-h-[2.7rem] items-center rounded-full bg-rose px-5 text-sm font-semibold whitespace-nowrap text-white shadow-[0_10px_24px_-6px_rgba(202,149,133,0.55)] transition-colors hover:bg-deep"
           >
             Book Appointment
           </a>
