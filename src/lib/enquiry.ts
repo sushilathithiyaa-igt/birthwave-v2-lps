@@ -35,3 +35,13 @@ export function buildWhatsAppTopicUrl(topic: string): string {
   const text = encodeURIComponent(`I'd like to know more about ${topic} at Birthwave.`);
   return `https://wa.me/${siteConfig.whatsappNumber}?text=${text}`;
 }
+
+/** Patient-voiced appointment request, for CTAs that aren't attached to a form. */
+export function buildWhatsAppAppointmentUrl(context?: string): string {
+  const text = encodeURIComponent(
+    context
+      ? `Hello Birthwave, I'd like to book an appointment (${context}).`
+      : "Hello Birthwave, I'd like to book an appointment."
+  );
+  return `https://wa.me/${siteConfig.whatsappNumber}?text=${text}`;
+}

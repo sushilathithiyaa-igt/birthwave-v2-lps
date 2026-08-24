@@ -35,6 +35,20 @@ export const primaryNav = [
   { label: "VBAC Consultation", href: "/vbac-consultation" },
 ] as const;
 
+/**
+ * The homepage carries the approved brand-level navigation from the design
+ * handoff rather than the service-page nav. Every target resolves to a real
+ * section on the homepage.
+ */
+export const homeNav = [
+  { label: "Home", href: "/#top" },
+  { label: "About", href: "/#about" },
+  { label: "Doctors", href: "/#team" },
+  { label: "Services", href: "/#services" },
+  { label: "Resources", href: "/#journey" },
+  { label: "Contact", href: "/#contact" },
+] as const;
+
 export const footerNav = [
   { label: "Home", href: "/" },
   ...primaryNav,

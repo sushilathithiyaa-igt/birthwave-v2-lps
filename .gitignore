@@ -24,6 +24,9 @@
 .DS_Store
 *.pem
 
+# visual-fidelity captures (regenerate with `npm run fidelity`)
+/tmp/
+
 # debug
 npm-debug.log*
 yarn-debug.log*

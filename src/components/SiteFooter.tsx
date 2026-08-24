@@ -4,7 +4,7 @@ import { footerNav, siteConfig } from "@/config/site";
 
 export function SiteFooter() {
   return (
-    <footer className="bg-ink py-16 text-white">
+    <footer data-od-id="footer" className="bg-ink py-16 text-white">
       <div className="mx-auto w-full max-w-[1220px] px-6 sm:px-8 lg:px-12">
         <div className="grid gap-10 pb-12 sm:grid-cols-2 lg:grid-cols-[1.2fr_0.7fr_1fr] lg:gap-16">
           <div className="sm:col-span-2 lg:col-span-1">

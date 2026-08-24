@@ -20,6 +20,30 @@
 
   --shadow-soft: 0 24px 60px -20px rgba(46, 36, 33, 0.22);
   --shadow-card: 0 14px 35px -18px rgba(46, 36, 33, 0.18);
+
+  /* ---------------------------------------------------------------------
+   * Approved homepage design tokens, lifted verbatim from the Open Design
+   * handoff (references/birthwave-v2-design/birthwave-homepage.html :root).
+   * Prefixed `od-` so the homepage can match the design contract exactly
+   * without shifting the four service pages, which were built against the
+   * slightly different values above. When those pages are recovered against
+   * the same handoff these become the canonical palette and the prefix goes.
+   * ------------------------------------------------------------------- */
+  --color-od-ivory: #fcf8f5;
+  --color-od-paper: #fffdfc;
+  --color-od-sand: #f6eae4;
+  --color-od-blush: #ebd6ce;
+  --color-od-rose: #ca9585;
+  --color-od-rose-deep: #b77d6d;
+  --color-od-sage: #e6f4f9;
+  --color-od-ink: #40302c;
+  --color-od-muted: #75645e;
+  --color-od-line: rgba(70, 55, 48, 0.14);
+  --color-od-footer: #201d1b;
+  --color-od-brandmark: #9d7668;
+
+  --shadow-od: 0 24px 60px rgba(91, 65, 58, 0.13);
+  --shadow-od-strip: 0 14px 35px rgba(67, 48, 40, 0.08);
 }
 
 @theme inline {
@@ -43,10 +67,31 @@
   --font-display: var(--font-plus-jakarta), "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
   --font-body: var(--font-poppins), "Poppins", ui-sans-serif, system-ui, sans-serif;
 
+  --color-od-ivory: var(--color-od-ivory);
+  --color-od-paper: var(--color-od-paper);
+  --color-od-sand: var(--color-od-sand);
+  --color-od-blush: var(--color-od-blush);
+  --color-od-rose: var(--color-od-rose);
+  --color-od-rose-deep: var(--color-od-rose-deep);
+  --color-od-sage: var(--color-od-sage);
+  --color-od-ink: var(--color-od-ink);
+  --color-od-muted: var(--color-od-muted);
+  --color-od-line: var(--color-od-line);
+  --color-od-footer: var(--color-od-footer);
+  --color-od-brandmark: var(--color-od-brandmark);
+
   --shadow-soft: var(--shadow-soft);
   --shadow-card: var(--shadow-card);
+  --shadow-od: var(--shadow-od);
+  --shadow-od-strip: var(--shadow-od-strip);
+
+  /* The handoff's two layout thresholds, kept as named breakpoints so the
+   * homepage markup can mirror the reference media queries literally. */
+  --breakpoint-bp620: 620px;
+  --breakpoint-bp1000: 1000px;
 
   --ease-birthwave: cubic-bezier(0.22, 0.75, 0.2, 1);
+  --ease-od: cubic-bezier(0.22, 0.8, 0.22, 1);
 }
 
 html {
@@ -68,6 +113,38 @@ body {
 
 section[id] {
   scroll-margin-top: 6rem;
+}
+
+/* Reference container widths (birthwave-homepage.html `.container`), which
+ * step down at the handoff's two thresholds rather than at Tailwind's. */
+.od-container {
+  width: calc(100% - 40px);
+  margin-inline: auto;
+}
+@media (min-width: 621px) {
+  .od-container {
+    width: min(100% - 56px, 760px);
+  }
+}
+@media (min-width: 1001px) {
+  .od-container {
+    width: min(1280px, calc(100% - 96px));
+  }
+}
+
+/* Entrance motion from the reference (`rise-in`). */
+@keyframes od-rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.od-rise {
+  animation: od-rise-in 0.7s var(--ease-od) both;
 }
 
 @media (max-width: 639px) {

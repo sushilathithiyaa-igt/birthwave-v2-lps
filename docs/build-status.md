@@ -14,16 +14,18 @@
 ## Routes
 | Route | Status |
 |---|---|
-| `/` | Built |
-| `/pregnancy-antenatal-care` | Built |
-| `/natural-birth` | Built |
-| `/normal-vaginal-delivery` | Built |
-| `/vbac-consultation` | Built |
+| `/` | Built — **rebuilt against the approved design handoff**, see `visual-fidelity-status.md` |
+| `/pregnancy-antenatal-care` | Built (not yet design-recovered) |
+| `/natural-birth` | Built (not yet design-recovered) |
+| `/normal-vaginal-delivery` | Built (not yet design-recovered) |
+| `/vbac-consultation` | Built (not yet design-recovered) |
 
 ## Technical checks (as of this build)
 - `npm run lint` — PASS
 - `npm run typecheck` — PASS
 - `npm run verify:birthwave` — PASS
+- `npm run fidelity` — PASS (homepage; 13/13 sections in order, no overflow at any of the nine
+  handoff viewports, ≤0.4% page-height delta at desktop)
 - `npm run build` — PASS (all 5 routes statically generated)
 
 ## Runtime/visual verification (this session)
