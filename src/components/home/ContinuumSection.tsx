@@ -2,8 +2,8 @@ const steps = [
   { num: "01", title: "Planning", copy: "Preconception and fertility support." },
   { num: "02", title: "Pregnancy", copy: "Antenatal care and preparation." },
   { num: "03", title: "Birth", copy: "Informed, supportive birth care." },
-  { num: "04", title: "Recovery", copy: "Postpartum support for mothers." },
-  { num: "05", title: "Baby & Child", copy: "Newborn, pediatric and vaccine care." },
+  { num: "04", title: "Baby & Child", copy: "Newborn, pediatric and vaccine care." },
+  { num: "05", title: "Recovery", copy: "Postpartum support for mothers." },
 ];
 
 /** Dot offsets exactly as declared in the reference's `.journey-line:before`
