@@ -15,6 +15,7 @@ export function RelatedCareBand({
   ctaLabel,
   items,
   bgClassName = "bg-ink",
+  odId,
 }: {
   eyebrow: string;
   title: string;
@@ -23,16 +24,17 @@ export function RelatedCareBand({
   ctaLabel?: string;
   items: RelatedCareItem[];
   bgClassName?: string;
+  odId?: string;
 }) {
   return (
-    <section className={`${bgClassName} py-[clamp(4.5rem,9vw,7.5rem)] text-white`}>
-      <div className="mx-auto grid w-full max-w-[1220px] gap-14 px-6 sm:px-8 lg:grid-cols-[0.75fr_1.25fr] lg:px-12">
-        <div className="lg:sticky lg:top-32 lg:self-start">
+    <section data-od-id={odId} className={`${bgClassName} py-[clamp(4.5rem,9vw,7.5rem)] text-white`}>
+      <div className="mx-auto grid w-full max-w-[1220px] gap-12 px-6 sm:px-8 bp1050:grid-cols-[0.75fr_1.25fr] bp1050:gap-[90px] lg:px-12">
+        <div className="bp1050:sticky bp1050:top-[120px] bp1050:self-start">
           <p className="mb-4 text-xs font-semibold tracking-[0.16em] text-coral/90 uppercase">{eyebrow}</p>
-          <h2 className="font-display text-[clamp(2.1rem,4vw,3.4rem)] leading-[1.05] font-semibold tracking-[-0.03em]">
+          <h2 className="font-display text-[clamp(2.5rem,4vw,3.8rem)] leading-[1.02] font-semibold tracking-[-0.03em]">
             {title}
           </h2>
-          <p className="mt-6 max-w-[400px] text-sm leading-relaxed text-white/70">{description}</p>
+          <p className="my-6 max-w-[390px] text-[15px] leading-relaxed text-white/70">{description}</p>
           {ctaHref && ctaLabel && (
             <Button href={ctaHref} variant="light" className="mt-7">
               {ctaLabel}
@@ -44,10 +46,10 @@ export function RelatedCareBand({
             const inner = (
               <>
                 <div>
-                  <h3 className="font-display text-2xl font-medium">{item.title}</h3>
-                  <p className="mt-1.5 max-w-[480px] text-sm text-white/70">{item.description}</p>
+                  <h3 className="font-display text-[28px] leading-[1.15] font-medium">{item.title}</h3>
+                  <p className="mt-[7px] max-w-[500px] text-sm text-white/70">{item.description}</p>
                 </div>
-                {item.href && <span aria-hidden className="text-2xl text-coral/90">↗</span>}
+                <span aria-hidden className="text-2xl text-coral/90">↗</span>
               </>
             );
             const className =

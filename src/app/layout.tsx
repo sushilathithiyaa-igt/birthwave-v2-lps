@@ -2,8 +2,11 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Poppins } from "next/font/google";
 import { siteConfig } from "@/config/site";
 import { MobileActionBar } from "@/components/MobileActionBar";
+import { QuickActionsRail } from "@/components/QuickActionsRail";
 import { SiteHeader } from "@/components/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter";
+import { ThemeScope } from "@/components/ThemeScope";
+import { BookingSheetProvider } from "@/components/BookingSheet";
 import "./globals.css";
 
 const plusJakarta = Plus_Jakarta_Sans({
@@ -43,11 +46,16 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${plusJakarta.variable} ${poppins.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col bg-ivory text-ink">
-        <SiteHeader />
-        <main className="flex-1">{children}</main>
-        <SiteFooter />
-        <MobileActionBar />
+      <body className="min-h-full bg-ivory text-ink">
+        <BookingSheetProvider>
+          <ThemeScope>
+            <SiteHeader />
+            <main className="flex-1">{children}</main>
+            <SiteFooter />
+            <MobileActionBar />
+            <QuickActionsRail />
+          </ThemeScope>
+        </BookingSheetProvider>
       </body>
     </html>
   );

@@ -22,12 +22,12 @@ export function FAQAccordion({ items }: { items: FAQItem[] }) {
                 aria-expanded={open}
                 aria-controls={`faq-answer-${index}`}
                 onClick={() => setOpenIndex(open ? -1 : index)}
-                className="flex w-full items-center justify-between gap-5 py-5 text-left text-[0.95rem] font-medium text-ink"
+                className="flex min-h-[70px] w-full items-center justify-between gap-4 py-[22px] text-left text-[0.95rem] font-medium text-ink"
               >
-                {item.question}
+                <span className="min-w-0 flex-1">{item.question}</span>
                 <span
                   aria-hidden
-                  className={`font-display text-2xl text-rose transition-transform duration-250 ${
+                  className={`grid h-[25px] w-[25px] shrink-0 place-items-center font-display text-2xl leading-none text-rose transition-transform duration-250 ${
                     open ? "rotate-45" : ""
                   }`}
                 >

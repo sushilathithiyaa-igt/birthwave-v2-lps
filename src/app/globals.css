@@ -85,10 +85,15 @@
   --shadow-od: var(--shadow-od);
   --shadow-od-strip: var(--shadow-od-strip);
 
-  /* The handoff's two layout thresholds, kept as named breakpoints so the
-   * homepage markup can mirror the reference media queries literally. */
+  /* The handoff's layout thresholds, kept as named breakpoints so markup can
+   * mirror the reference media queries literally. bp620 is the mobile/tablet
+   * split shared by both stylesheets; bp1000 is the homepage's own container
+   * threshold; bp1050 is birthwave-landing.css's two-column collapse point
+   * for the four service pages (.hero-grid/.editorial/.focus-layout/etc.) —
+   * distinct from bp1000 and from Tailwind's built-in 1024px `lg`. */
   --breakpoint-bp620: 620px;
   --breakpoint-bp1000: 1000px;
+  --breakpoint-bp1050: 1050px;
 
   --ease-birthwave: cubic-bezier(0.22, 0.75, 0.2, 1);
   --ease-od: cubic-bezier(0.22, 0.8, 0.22, 1);
@@ -151,6 +156,40 @@ section[id] {
   body {
     padding-bottom: calc(4.5rem + env(safe-area-inset-bottom));
   }
+}
+
+/* ---------------------------------------------------------------------
+ * Per-page palettes for the four landing pages, lifted verbatim from
+ * birthwave-landing.css's `.page-*` scoping rules. Applied by ThemeScope
+ * as a wrapping class so the whole page (header, hero, sections, footer)
+ * tints consistently, matching the reference exactly. Pregnancy needs no
+ * override — its `--brown`/`--cream`/`--pale`/`--mist` already match this
+ * project's default --color-rose/sand/blush/sky-mist tokens.
+ * ------------------------------------------------------------------- */
+.theme-natural-birth {
+  --color-rose: #bb725f;
+  --color-deep: #a35d4c;
+  --color-ivory: #fff8f4;
+  --color-sand: #f5dfd7;
+  --color-blush: #eac3b7;
+  --color-sky-mist: #f7e8e2;
+}
+.theme-normal-vaginal-delivery {
+  --color-rose: #4f98bd;
+  --color-deep: #3d7c9c;
+  --color-ivory: #f5fbfd;
+  --color-sand: #e5f2f6;
+  --color-blush: #cbe7ef;
+  --color-sky-mist: #e3f3f8;
+}
+.theme-vbac {
+  --color-rose: #986858;
+  --color-deep: #7d5346;
+  --color-ivory: #f8f0ed;
+  --color-sand: #ead9d2;
+  --color-blush: #d4b8ad;
+  --color-sky-mist: #eee1dc;
+  --color-cocoa: #382722;
 }
 
 @media (prefers-reduced-motion: reduce) {
