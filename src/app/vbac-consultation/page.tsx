@@ -72,7 +72,7 @@ export default function VBACConsultationPage() {
         imageSrc="/images/care/postpartum-baby-feet.png"
         imageAlt="A newborn's feet resting against a mother's postpartum belly"
         imageSideSrc="/images/home/dr-santoshi-clinic.jpg"
-        imageSideAlt="Dr. Santoshi Nandigam at the Birthwave clinic"
+        imageSideAlt="Dr. Santoshi Nandigam at The Birthwave clinic"
         badge="Individual care"
         tag={{ heading: "One history", body: "one present pregnancy, one careful conversation." }}
       />

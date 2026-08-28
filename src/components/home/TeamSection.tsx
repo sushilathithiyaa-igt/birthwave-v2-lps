@@ -55,7 +55,7 @@ export function TeamSection() {
             <div className="relative h-[360px] overflow-hidden rounded-[120px_20px_20px_20px] bg-od-sand bp620:h-[410px]">
               <Image
                 src="/images/team/dr-santoshi-nandigam.png"
-                alt="Portrait of Dr. Santoshi Nandigam, Founder of Birthwave"
+                alt="Portrait of Dr. Santoshi Nandigam, Founder of The Birthwave"
                 fill
                 sizes="(max-width: 620px) 90vw, 240px"
                 className="object-cover"

@@ -16,7 +16,7 @@ export function ClinicProofSection() {
       <div className="od-container">
         <div className="max-w-[700px]">
           <p className="mb-[18px] text-xs font-bold tracking-[0.16em] text-od-rose uppercase">
-            Inside Birthwave
+            Inside The Birthwave
           </p>
           <h2 className="font-display text-[43px] leading-[1.05] font-semibold tracking-[-0.045em] text-od-ink bp620:text-[clamp(38px,4.2vw,60px)]">
             A space designed to feel calm.
@@ -30,7 +30,7 @@ export function ClinicProofSection() {
           >
             <Image
               src="/images/home/clinic-lounge.jpg"
-              alt="The waiting lounge at the Birthwave clinic, with soft lighting and a lit arched alcove"
+              alt="The waiting lounge at The Birthwave clinic, with soft lighting and a lit arched alcove"
               fill
               sizes="(max-width: 1000px) 92vw, 707px"
               className="object-cover"
@@ -58,7 +58,7 @@ export function ClinicProofSection() {
             >
               <Image
                 src="/images/home/clinic-consult-lounge.jpg"
-                alt="Seating and consulting alcoves inside the Birthwave clinic"
+                alt="Seating and consulting alcoves inside The Birthwave clinic"
                 fill
                 sizes="(max-width: 1000px) 45vw, 555px"
                 className="object-cover"

@@ -21,7 +21,7 @@ export function DoctorTrust({
       <div className="relative mx-auto aspect-[4/5] w-full max-w-[340px] overflow-hidden rounded-[120px_20px_20px_20px] shadow-[var(--shadow-soft)]">
         <Image
           src="/images/team/dr-santoshi-nandigam.png"
-          alt="Dr. Santoshi Nandigam, Founder of Birthwave"
+          alt="Dr. Santoshi Nandigam, Founder of The Birthwave"
           fill
           sizes="(max-width: 768px) 340px, 400px"
           className="object-cover"

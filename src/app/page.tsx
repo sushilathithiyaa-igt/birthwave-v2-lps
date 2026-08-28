@@ -6,6 +6,7 @@ import { ServicesSection } from "@/components/home/ServicesSection";
 import { BirthFocusSection } from "@/components/home/BirthFocusSection";
 import { ContinuumSection } from "@/components/home/ContinuumSection";
 import { TeamSection } from "@/components/home/TeamSection";
+import { DoctorTrust } from "@/components/DoctorTrust";
 import { DifferenceSection } from "@/components/home/DifferenceSection";
 import { ClinicProofSection } from "@/components/home/ClinicProofSection";
 import { HomeFaqSection } from "@/components/home/HomeFaqSection";
@@ -29,6 +30,14 @@ export default function Home() {
       <BirthFocusSection />
       <ContinuumSection />
       <TeamSection />
+      <section
+        data-od-id="doctor-trust"
+        className="bg-od-ivory py-[76px] bp620:py-[clamp(84px,10vw,148px)]"
+      >
+        <div className="od-container">
+          <DoctorTrust />
+        </div>
+      </section>
       <DifferenceSection />
       <ClinicProofSection />
       <HomeFaqSection />

@@ -1,12 +1,17 @@
 import Link from "next/link";
 import { TextLink } from "@/components/home/TextLink";
+import { buildWhatsAppTopicUrl } from "@/lib/enquiry";
 
 type Service = {
   odId: string;
   index: string;
   title: string;
   copy: string;
-  href: string;
+  /** Real internal route or in-page anchor. Omit and set `topic` instead
+   *  for a service with no dedicated V2 page yet — it routes to WhatsApp
+   *  with that topic preselected rather than a silent/dead link. */
+  href?: string;
+  topic?: string;
   /** Column spans on the reference's 12-column mosaic. */
   span: string;
   feature?: boolean;
@@ -17,16 +22,16 @@ const services: Service[] = [
     odId: "service-womens-health",
     index: "01",
     title: "Women's Health & Gynaecology",
-    copy: "Menstrual health, hormonal concerns, preventive and general care.",
-    href: "/#contact",
+    copy: "Menstrual and hormonal concerns, PCOS, preventive care, and vaginismus & pelvic health.",
+    topic: "Women's Health, Gynaecology & Vaginismus Care",
     span: "col-span-1 bp620:col-span-4",
   },
   {
     odId: "service-fertility",
     index: "02",
     title: "Fertility & Preconception",
-    copy: "Planning pregnancy, evaluation, support and counselling.",
-    href: "/#contact",
+    copy: "Preconception planning, fertility evaluation and holistic fertility support.",
+    topic: "Fertility & Holistic Preconception Care",
     span: "col-span-1 bp620:col-span-4",
   },
   {
@@ -52,7 +57,7 @@ const services: Service[] = [
     index: "05",
     title: "Postpartum Recovery",
     copy: "Recovery, breastfeeding and post-delivery wellbeing.",
-    href: "/#contact",
+    topic: "Postpartum Recovery",
     span: "col-span-1 bp620:col-span-3",
   },
   {
@@ -60,7 +65,7 @@ const services: Service[] = [
     index: "06",
     title: "Newborn & Children's Care",
     copy: "Newborn consultations, pediatric care and vaccinations.",
-    href: "/#contact",
+    topic: "Newborn & Pediatric Care",
     span: "col-span-1 bp620:col-span-3",
   },
   {
@@ -68,7 +73,7 @@ const services: Service[] = [
     index: "07",
     title: "Supportive & Holistic Care",
     copy: "Nutrition, movement, pregnancy wellbeing and counselling.",
-    href: "/#contact",
+    topic: "Supportive & Holistic Care (Nutrition, Yoga, Wellbeing)",
     span: "col-span-1 bp620:col-span-6",
   },
 ];
@@ -99,50 +104,72 @@ export function ServicesSection() {
         </div>
 
         <div className="grid grid-cols-2 gap-2.5 bp620:grid-cols-12 bp620:gap-[14px]">
-          {services.map((service) => (
-            <Link
-              key={service.odId}
-              href={service.href}
-              data-od-id={service.odId}
-              className={`group flex min-h-[215px] min-w-0 flex-col rounded-[20px] border p-5 transition-[transform,box-shadow,background] duration-300 hover:-translate-y-[5px] hover:shadow-[var(--shadow-od)] bp620:min-h-[220px] bp620:p-[27px] ${service.span} ${
-                service.feature
-                  ? "border-transparent bg-od-rose text-white hover:bg-[#835951]"
-                  : "border-[rgba(70,55,48,0.1)] bg-white/68 hover:bg-white"
-              }`}
-            >
-              <span
-                className={`mb-auto font-display text-sm ${
-                  service.feature ? "text-[#f3d8d1]" : "text-od-rose"
-                }`}
-              >
-                {service.index}
-              </span>
-              <h3
-                // Fluid below 620 so the longest single words ("Gynaecology",
-                // "Preconception") still fit the two-up card without breaking
-                // mid-word; the reference's fixed 23px overflows here.
-                className={`mt-[18px] mb-[9px] font-display text-[clamp(16px,4.6vw,23px)] leading-[1.08] tracking-[-0.02em] break-words bp620:text-[26px] ${
-                  service.feature ? "text-white" : "text-od-ink"
-                }`}
-              >
-                {service.title}
-              </h3>
-              <p
-                className={`text-[13px] leading-[1.5] bp620:text-sm ${
-                  service.feature ? "text-white/82" : "text-od-muted"
-                }`}
-              >
-                {service.copy}
-              </p>
-              <span
-                className={`mt-[19px] text-[13px] font-bold ${
-                  service.feature ? "text-white/82" : "text-od-rose"
-                }`}
-              >
-                Learn more →
-              </span>
-            </Link>
-          ))}
+          {services.map((service) => {
+            const cardClassName = `group flex min-h-[215px] min-w-0 flex-col rounded-[20px] border p-5 transition-[transform,box-shadow,background] duration-300 hover:-translate-y-[5px] hover:shadow-[var(--shadow-od)] bp620:min-h-[220px] bp620:p-[27px] ${service.span} ${
+              service.feature
+                ? "border-transparent bg-od-rose text-white hover:bg-[#835951]"
+                : "border-[rgba(70,55,48,0.1)] bg-white/68 hover:bg-white"
+            }`;
+            const content = (
+              <>
+                <span
+                  className={`mb-auto font-display text-sm ${
+                    service.feature ? "text-[#f3d8d1]" : "text-od-rose"
+                  }`}
+                >
+                  {service.index}
+                </span>
+                <h3
+                  // Fluid below 620 so the longest single words ("Gynaecology",
+                  // "Preconception") still fit the two-up card without breaking
+                  // mid-word; the reference's fixed 23px overflows here.
+                  className={`mt-[18px] mb-[9px] font-display text-[clamp(16px,4.6vw,23px)] leading-[1.08] tracking-[-0.02em] break-words bp620:text-[26px] ${
+                    service.feature ? "text-white" : "text-od-ink"
+                  }`}
+                >
+                  {service.title}
+                </h3>
+                <p
+                  className={`text-[13px] leading-[1.5] bp620:text-sm ${
+                    service.feature ? "text-white/82" : "text-od-muted"
+                  }`}
+                >
+                  {service.copy}
+                </p>
+                <span
+                  className={`mt-[19px] text-[13px] font-bold ${
+                    service.feature ? "text-white/82" : "text-od-rose"
+                  }`}
+                >
+                  Learn more →
+                </span>
+              </>
+            );
+
+            // A service without a dedicated V2 page yet routes to WhatsApp
+            // with that topic preselected, rather than silently pointing at
+            // an unrelated anchor or an absent page.
+            if (service.topic) {
+              return (
+                <a
+                  key={service.odId}
+                  href={buildWhatsAppTopicUrl(service.topic)}
+                  target="_blank"
+                  rel="noreferrer"
+                  data-od-id={service.odId}
+                  className={cardClassName}
+                >
+                  {content}
+                </a>
+              );
+            }
+
+            return (
+              <Link key={service.odId} href={service.href ?? "/"} data-od-id={service.odId} className={cardClassName}>
+                {content}
+              </Link>
+            );
+          })}
         </div>
       </div>
     </section>

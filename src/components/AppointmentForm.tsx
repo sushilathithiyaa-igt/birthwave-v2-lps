@@ -68,7 +68,7 @@ export function AppointmentForm({
       >
         <h3 className="font-display text-xl font-semibold text-ink">Thank you.</h3>
         <p className="mt-3 text-sm leading-relaxed text-muted">
-          We&apos;ve opened WhatsApp with your enquiry details. Send the message and the Birthwave
+          We&apos;ve opened WhatsApp with your enquiry details. Send the message and The Birthwave
           team will get back to you shortly.
         </p>
         <button
@@ -206,7 +206,7 @@ export function AppointmentForm({
       </div>
 
       <p className="mt-3.5 text-[0.65rem] leading-relaxed text-muted">
-        By submitting, you agree that the Birthwave team may contact you about this enquiry. This
+        By submitting, you agree that The Birthwave team may contact you about this enquiry. This
         opens a pre-filled WhatsApp message — no appointment is confirmed until the team responds.
       </p>
 

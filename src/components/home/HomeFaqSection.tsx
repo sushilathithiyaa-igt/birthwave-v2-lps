@@ -5,34 +5,29 @@ import Link from "next/link";
 
 const faqs = [
   {
-    question: "What is the difference between normal delivery and natural birth?",
+    question: "When should I first consult a doctor after finding out I'm pregnant?",
     answer:
-      "Normal delivery generally refers to vaginal birth. Natural birth often describes a lower-intervention approach. Your care team can help you understand what is appropriate for your pregnancy.",
+      "Early pregnancy is a useful time to confirm the pregnancy, discuss your health and understand the next steps in antenatal care.",
   },
   {
-    question: "When should I start preparing for normal or natural birth?",
+    question: "I had a C-section before. Can I consider a vaginal birth this time?",
     answer:
-      "Preparation can begin early in pregnancy and can be tailored as your pregnancy progresses. Speak with your clinician about the right timing for you.",
+      "A vaginal birth after a previous C-section is called VBAC. Whether it may be suitable depends on your previous delivery, current pregnancy and individual medical factors.",
   },
   {
-    question: "Is VBAC possible after a previous C-section?",
+    question: "When should we consider a fertility consultation?",
     answer:
-      "VBAC may be possible for some people. It depends on your medical history and current pregnancy, so an individual consultation is important.",
+      "If pregnancy is taking longer than expected, or if you already know of a condition that may affect fertility, an evaluation can help you understand possible next steps.",
   },
   {
-    question: "When should I schedule my first antenatal consultation?",
+    question: "Intercourse is painful or penetration feels difficult. Who should I speak to?",
     answer:
-      "Many people book after a positive pregnancy test. Our team can guide you on timing based on your needs and history.",
+      "Pain or involuntary tightening during attempted penetration can have different causes, including vaginismus and pelvic-floor concerns. A private consultation can help identify what may be contributing to it.",
   },
   {
-    question: "Does Birthwave provide pediatric and vaccination services?",
+    question: "Can my newborn also receive care at The Birthwave?",
     answer:
-      "Yes. Birthwave supports newborn consultations, pediatric care, child wellness and routine vaccinations.",
-  },
-  {
-    question: "How do I book an appointment?",
-    answer:
-      "Use the appointment button below or contact the clinic directly. Our team will help you find the right care.",
+      "Yes. The Birthwave provides pediatric care for newborns and children, including consultations, growth monitoring and vaccination support.",
   },
 ];
 
@@ -61,7 +56,7 @@ export function HomeFaqSection() {
             href="/#contact"
             className="group mt-[22px] inline-flex items-center gap-2 text-sm font-semibold text-od-ink"
           >
-            Contact Birthwave
+            Contact The Birthwave
             <span aria-hidden className="text-lg transition-transform duration-250 group-hover:translate-x-1">
               →
             </span>

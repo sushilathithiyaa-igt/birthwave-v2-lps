@@ -67,7 +67,7 @@ export default function NormalVaginalDeliveryPage() {
         imageSrc="/images/care/childbirth-workshop-02.png"
         imageAlt="A care team member demonstrating a labour support position during a workshop"
         imageSideSrc="/images/care/clinic-interior.webp"
-        imageSideAlt="A calm consultation space inside the Birthwave clinic"
+        imageSideAlt="A calm consultation space inside The Birthwave clinic"
         badge="Care, not a promise"
         tag={{ heading: "Prepared together", body: "with support through changing clinical needs." }}
       />
@@ -92,7 +92,7 @@ export default function NormalVaginalDeliveryPage() {
         description="Normal vaginal delivery refers to vaginal birth. The path to it is individual, and care decisions should reflect your pregnancy, your health and your clinician's guidance."
         points={["Ask questions early", "Prepare with guidance", "Keep options open", "Review as things change"]}
         imageSrc="/images/care/community-event.png"
-        imageAlt="A warm gathering of Birthwave families and care team"
+        imageAlt="A warm gathering of The Birthwave families and care team"
         cta={
           <BookTrigger config={booking}>Talk to the team</BookTrigger>
         }

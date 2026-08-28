@@ -18,17 +18,18 @@ export function HeroSection() {
       <div className="od-container relative grid gap-[55px] bp1000:grid-cols-[0.92fr_1.08fr] bp1000:items-center bp1000:gap-[50px]">
         <div className="od-rise relative z-[2]">
           <p className="mb-[18px] text-xs font-bold tracking-[0.16em] text-od-rose uppercase">
-            Women &bull; Mother &bull; Child
+            Women&rsquo;s Wellness &bull; Pregnancy &bull; Fertility &bull; Mother &amp; Baby Care
           </p>
           <h1
             data-od-id="hero-heading"
             className="max-w-[650px] font-display text-[clamp(45px,13vw,62px)] leading-[1.01] font-semibold tracking-[-0.055em] text-od-ink bp620:text-[clamp(48px,5.55vw,78px)] bp620:tracking-[-0.06em]"
           >
-            Care for every chapter of womanhood, motherhood &amp; childhood.
+            Care for every stage of your journey into motherhood.
           </h1>
           <p className="mt-[26px] mb-8 max-w-[530px] text-base leading-[1.65] text-od-muted bp620:text-[18px]">
-            Thoughtful women&rsquo;s health, pregnancy, birth, postpartum, newborn and pediatric
-            care &mdash; together at Birthwave.
+            From preparing for pregnancy to pregnancy care, birth, postpartum recovery and your
+            baby&rsquo;s early care, The Birthwave brings medical expertise and holistic support
+            together around you.
           </p>
           <div className="flex flex-wrap items-center gap-[18px]">
             <Link
@@ -43,7 +44,7 @@ export function HeroSection() {
               </span>
             </Link>
             <TextLink href="/#services" data-od-id="hero-explore-care">
-              Explore Our Care
+              Explore The Birthwave
             </TextLink>
           </div>
         </div>
@@ -55,7 +56,7 @@ export function HeroSection() {
           <div className="absolute top-0 right-0 h-[360px] w-[76%] overflow-hidden rounded-[120px_120px_18px_18px] shadow-[var(--shadow-od)] bp620:right-[5%] bp620:h-[500px] bp620:w-[72%] bp620:rounded-[180px_180px_22px_22px]">
             <Image
               src="/images/home/dr-santoshi-clinic.jpg"
-              alt="Dr. Santoshi Nandigam at her consulting desk in the Birthwave clinic"
+              alt="Dr. Santoshi Nandigam at her consulting desk in The Birthwave clinic"
               fill
               sizes="(max-width: 620px) 76vw, (max-width: 1000px) 60vw, 500px"
               priority
@@ -75,9 +76,9 @@ export function HeroSection() {
 
           <div className="absolute right-0 bottom-4 max-w-[140px] rounded-2xl bg-white p-[13px] text-[11px] leading-[1.35] text-od-muted shadow-[var(--shadow-od)] bp620:bottom-[52px] bp620:max-w-[175px] bp620:px-5 bp620:py-[18px] bp620:text-[13px]">
             <strong className="mb-1 block font-display text-[19px] leading-[1.2] font-semibold text-od-ink bp620:text-[21px]">
-              One care team
+              Dr. Santoshi Nandigam
             </strong>
-            for the journey from planning to growing up.
+            Founder &middot; Obstetrics &amp; Gynaecology
           </div>
         </div>
       </div>

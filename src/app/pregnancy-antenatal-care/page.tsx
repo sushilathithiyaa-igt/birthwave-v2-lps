@@ -122,7 +122,7 @@ export default function PregnancyAntenatalCarePage() {
         odId="care-team"
         eyebrow="Connected care"
         title="Pregnancy is not a checklist."
-        description="It is a changing journey. Birthwave brings care, preparation and ongoing support together."
+        description="It is a changing journey. The Birthwave brings care, preparation and ongoing support together."
         ctaHref="#book"
         ctaLabel="Talk to the team"
         items={connectedCare}

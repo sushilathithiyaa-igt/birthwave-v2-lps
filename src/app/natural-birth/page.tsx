@@ -58,6 +58,11 @@ const faqs = [
     question: "Can I discuss pain relief and changing plans?",
     answer: "Yes. A birth plan is a conversation, and it can be revisited with your clinician as circumstances change.",
   },
+  {
+    question: "Can I have doula support during labour?",
+    answer:
+      "Doula support — continuous physical and emotional support during labour — can be part of preparing for natural birth. Speak with your care team about what this could look like alongside your obstetric care.",
+  },
 ];
 
 export default function NaturalBirthPage() {
