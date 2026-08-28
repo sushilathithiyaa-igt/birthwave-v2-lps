@@ -25,12 +25,12 @@ export function SiteFooter() {
         <div className="grid gap-8 pb-12 bp620:grid-cols-2 bp620:gap-[42px] bp1000:grid-cols-[1.25fr_0.7fr_1fr] bp1000:gap-[70px]">
           <div className="bp620:col-span-2 bp1000:col-span-1">
             <Link href="/" className="mb-4 inline-flex items-center">
-              <span className="relative block aspect-[1439/702] h-10 overflow-hidden rounded-xl bg-rose px-3 py-2">
+              <span className="relative block aspect-[4237/2052] h-12 overflow-hidden rounded-xl bg-rose px-3 py-2">
                 <Image
-                  src="/images/brand/birthwave-logo-white-trimmed.png"
-                  alt={siteConfig.name}
+                  src="/images/brand/birthwave-logo-white-with-byline.png"
+                  alt={`${siteConfig.name} — by Dr. Santoshi Nandigam`}
                   fill
-                  sizes="140px"
+                  sizes="170px"
                   className="object-contain"
                 />
               </span>

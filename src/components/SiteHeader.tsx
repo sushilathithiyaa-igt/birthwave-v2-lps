@@ -56,12 +56,15 @@ export function SiteHeader() {
           aria-label={`${siteConfig.name} home`}
           className="mr-auto flex shrink-0 items-center"
         >
-          <span className="relative block h-[58px] w-[148px] shrink-0 overflow-hidden rounded-lg bg-od-brandmark">
+          <span className="relative block h-[64px] w-[172px] shrink-0 overflow-hidden rounded-lg bg-od-brandmark">
+            {/* Full lockup, including the "By Dr. Santoshi Nandigam" byline —
+                the previous trimmed asset omitted it, which the client
+                flagged as the logo not being clearly identifiable. */}
             <Image
-              src="/images/brand/birthwave-logo-white-trimmed.png"
-              alt={siteConfig.name}
+              src="/images/brand/birthwave-logo-white-with-byline.png"
+              alt={`${siteConfig.name} — by Dr. Santoshi Nandigam`}
               fill
-              sizes="148px"
+              sizes="172px"
               className="object-contain p-2"
               priority
             />

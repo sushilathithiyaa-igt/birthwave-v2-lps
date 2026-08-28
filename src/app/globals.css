@@ -8,11 +8,15 @@
   --color-ink: #2e2421;
   --color-rose: #ca9585;
   --color-coral: #f88379;
-  --color-sky: #5daedb;
   --color-muted: #6b5c57;
   --color-blush: #e8d9d1;
   --color-blush-light: #f8ece7;
-  --color-sky-mist: #eaf5fa;
+  /* Warm rose-mist neutral — was a pale blue (#eaf5fa); the actual Brand
+     Guideline PDF lists blue (#5DAEDB) as an official primary color, but
+     the client has explicitly rejected any blue on the site this pass, so
+     every "mist" tint now derives from the approved rose (#CA9585) /
+     coral (#F88379) primaries instead. See docs/brand-color-audit.md. */
+  --color-sky-mist: #f6ede8;
   --color-sand: #f5ece3;
   --color-mist-pink: #f6eff1;
   --color-deep: #734d42;
@@ -54,7 +58,6 @@
   --color-ink: var(--color-ink);
   --color-rose: var(--color-rose);
   --color-coral: var(--color-coral);
-  --color-sky: var(--color-sky);
   --color-muted: var(--color-muted);
   --color-blush: var(--color-blush);
   --color-blush-light: var(--color-blush-light);
@@ -180,12 +183,16 @@ section[id] {
   --color-sky-mist: #f7e8e2;
 }
 .theme-normal-vaginal-delivery {
-  --color-rose: #4f98bd;
-  --color-deep: #3d7c9c;
-  --color-ivory: #f5fbfd;
-  --color-sand: #e5f2f6;
-  --color-blush: #cbe7ef;
-  --color-sky-mist: #e3f3f8;
+  /* Was a blue theme (#4f98bd/#3d7c9c) — the client has explicitly
+     rejected all blue on the site, so this page's accent now derives from
+     the second approved brand primary, coral (#F88379), instead. See
+     docs/brand-color-audit.md. */
+  --color-rose: #f88379;
+  --color-deep: #dd6a5f;
+  --color-ivory: #fff5f3;
+  --color-sand: #fbe2dd;
+  --color-blush: #f6c4bb;
+  --color-sky-mist: #fce8e4;
 }
 .theme-vbac {
   --color-rose: #986858;
