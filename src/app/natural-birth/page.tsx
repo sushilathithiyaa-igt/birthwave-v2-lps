@@ -6,36 +6,49 @@ import { CareGrid } from "@/components/CareGrid";
 import { RelatedCareBand } from "@/components/RelatedCareBand";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { ConversionSection } from "@/components/ConversionSection";
+import { BirthConceptComparison } from "@/components/BirthConceptComparison";
 import { landingPageBooking } from "@/config/landingPages";
 import { siteConfig } from "@/config/site";
 
 export const metadata: Metadata = {
   title: "Natural Birth",
   description:
-    "Prepare for birth with calm, clarity and support. Guidance for an informed, low-intervention birth experience where appropriate at The Birthwave, Nungambakkam, Chennai.",
+    "Natural birth is an approach to labour and birth — movement, breathing, relaxation and informed choice, with fewer interventions where appropriate. Prepare with The Birthwave, Nungambakkam, Chennai.",
   alternates: { canonical: "/natural-birth" },
 };
 
 const booking = landingPageBooking["/natural-birth"];
 
 const principles = [
-  { number: "01", title: "Learn", description: "Understand the choices available to you." },
-  { number: "02", title: "Prepare", description: "Build confidence through practical preparation." },
-  { number: "03", title: "Adapt", description: "Keep clinical context at the centre of decisions." },
+  {
+    number: "01",
+    title: "Learn",
+    description: "Understand labour, breathing, movement, positioning and comfort measures — and how they may fit your pregnancy.",
+  },
+  {
+    number: "02",
+    title: "Prepare",
+    description: "Build confidence through childbirth education, practical preparation and birth-partner involvement.",
+  },
+  {
+    number: "03",
+    title: "Adapt",
+    description: "Preferences can change. Pain-relief options stay part of the conversation, and your clinical circumstances stay at the centre of every decision.",
+  },
 ];
 
 const preparationItems = [
   {
     number: "01 / START HERE",
     title: "Talk through your wishes",
-    description: "Begin with a consultation where your questions, preferences and medical context can be understood.",
+    description: "Begin with a consultation where your birth preferences, questions and medical context can be understood.",
     feature: true,
     linkLabel: "Start the conversation",
   },
-  { number: "02", title: "Birth preparation", description: "Explore practical ways to prepare.", linkLabel: "Learn more" },
-  { number: "03", title: "Movement & wellbeing", description: "Supportive guidance through pregnancy.", linkLabel: "Learn more" },
-  { number: "04", title: "Know your options", description: "Natural birth, normal delivery and VBAC conversations.", linkLabel: "Ask the team" },
-  { number: "05", title: "Ongoing care", description: "Support that continues beyond one appointment.", linkLabel: "Book a visit" },
+  { number: "02", title: "Breathing & relaxation", description: "Techniques that may help you stay calm and work through contractions.", linkLabel: "Learn more" },
+  { number: "03", title: "Movement & positioning", description: "Comfortable positions and movement during labour, where appropriate.", linkLabel: "Learn more" },
+  { number: "04", title: "Birth-partner support", description: "Help your partner understand labour and how they can support you.", linkLabel: "Ask the team" },
+  { number: "05", title: "Childbirth education", description: "Practical knowledge about labour, birth and the early days after.", linkLabel: "Book a visit" },
 ];
 
 const relatedCare = [
@@ -46,9 +59,9 @@ const relatedCare = [
 
 const faqs = [
   {
-    question: "What is the difference between normal delivery and natural birth?",
+    question: "Is natural birth the same as normal vaginal delivery?",
     answer:
-      "Normal delivery generally refers to vaginal birth. Natural birth often describes a lower-intervention approach. Your care team can help you understand what is appropriate for your pregnancy.",
+      "No. Natural birth describes an approach to labour and birth — movement, breathing, relaxation and informed choice, with fewer interventions where clinically appropriate. Normal vaginal delivery describes the route of birth. The two are related but not the same question, and your care team can help you understand what may be appropriate for your pregnancy.",
   },
   {
     question: "When should I start preparing for natural birth?",
@@ -56,7 +69,8 @@ const faqs = [
   },
   {
     question: "Can I discuss pain relief and changing plans?",
-    answer: "Yes. A birth plan is a conversation, and it can be revisited with your clinician as circumstances change.",
+    answer:
+      "Yes. Choosing pain relief does not take away from the importance of being informed, supported and involved in decisions about your birth. Changing the birth plan is not a failure — it is part of responding to how your labour progresses.",
   },
   {
     question: "Can I have doula support during labour?",
@@ -72,7 +86,7 @@ export default function NaturalBirthPage() {
         tone="dark"
         eyebrow="Natural birth"
         title="Prepare for birth with calm, clarity and support."
-        lede="Guidance for an informed, low-intervention birth experience where appropriate, shaped around your pregnancy and clinical needs."
+        lede="Natural birth is an approach to labour and birth — not a route of delivery — built on movement, breathing, relaxation and informed choice, with fewer interventions where clinically appropriate."
         bookingConfig={booking}
         primaryLabel="Book an Appointment"
         whatsappHref={siteConfig.whatsappHref}
@@ -86,13 +100,15 @@ export default function NaturalBirthPage() {
       <EditorialBand
         odId="meaning"
         className="bg-sand"
-        eyebrow="What natural birth can mean"
-        title="Your preferences deserve a thoughtful conversation."
-        description="Natural birth often describes a lower-intervention approach. The Birthwave team can help you understand options, preparation and what may be appropriate for your pregnancy."
+        eyebrow="What natural birth means at The Birthwave"
+        title="An approach, not a route of delivery."
+        description="Natural birth describes how you prepare for and experience labour — through movement, breathing, relaxation, comfort measures and informed choice — with fewer routine interventions where clinically appropriate. The Birthwave team can help you understand what preparation and support may be appropriate for your pregnancy."
         principles={principles}
         imageSrc="/images/care/workshop-facilitator.png"
         imageAlt="A childbirth educator teaching with a pelvis model during a workshop"
       />
+
+      <BirthConceptComparison />
 
       <section id="prepare" data-od-id="preparation" className="py-[clamp(4.5rem,9vw,7.5rem)]">
         <div className="mx-auto w-full max-w-[1220px] px-6 sm:px-8 lg:px-12">

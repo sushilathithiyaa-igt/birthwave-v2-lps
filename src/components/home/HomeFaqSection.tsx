@@ -5,14 +5,29 @@ import Link from "next/link";
 
 const faqs = [
   {
-    question: "When should I first consult a doctor after finding out I'm pregnant?",
+    question: "Can I seek care at The Birthwave even if I'm not planning pregnancy?",
     answer:
-      "Early pregnancy is a useful time to confirm the pregnancy, discuss your health and understand the next steps in antenatal care.",
+      "Yes. The Birthwave supports women through changing stages of health and life — general gynaecology, menstrual and hormonal concerns, PCOS, pelvic health and vaginismus are all part of the care offered here, not only pregnancy and birth.",
   },
   {
-    question: "I had a C-section before. Can I consider a vaginal birth this time?",
+    question: "What makes The Birthwave's approach different?",
     answer:
-      "A vaginal birth after a previous C-section is called VBAC. Whether it may be suitable depends on your previous delivery, current pregnancy and individual medical factors.",
+      "Care is built around continuity and the whole woman, not a single appointment or a single condition — bringing medical care together with informed decision-making and supportive care as your needs change.",
+  },
+  {
+    question: "Can PCOS affect my periods or fertility?",
+    answer:
+      "PCOS can be associated with irregular periods, hormonal changes and, for some women, difficulty conceiving. An individual evaluation can help you understand how it may be affecting you.",
+  },
+  {
+    question: "How are lifestyle, nutrition and weight discussed in PCOS or fertility care?",
+    answer:
+      "Where relevant to your individual health and fertility goals, lifestyle and nutrition may be discussed as part of your overall care plan — alongside, not instead of, appropriate medical evaluation.",
+  },
+  {
+    question: "What does holistic fertility support mean?",
+    answer:
+      "It means combining appropriate medical evaluation with broader support for preconception health and wellbeing, rather than looking at fertility in isolation. It does not mean every fertility consultation leads to IVF.",
   },
   {
     question: "When should we consider a fertility consultation?",
@@ -23,6 +38,16 @@ const faqs = [
     question: "Intercourse is painful or penetration feels difficult. Who should I speak to?",
     answer:
       "Pain or involuntary tightening during attempted penetration can have different causes, including vaginismus and pelvic-floor concerns. A private consultation can help identify what may be contributing to it.",
+  },
+  {
+    question: "When should I first consult a doctor after finding out I'm pregnant?",
+    answer:
+      "Early pregnancy is a useful time to confirm the pregnancy, discuss your health and understand the next steps in antenatal care.",
+  },
+  {
+    question: "I had a C-section before. Can I consider a vaginal birth this time?",
+    answer:
+      "A vaginal birth after a previous C-section is called VBAC. Whether it may be suitable depends on your previous delivery, current pregnancy and individual medical factors.",
   },
   {
     question: "Can my newborn also receive care at The Birthwave?",

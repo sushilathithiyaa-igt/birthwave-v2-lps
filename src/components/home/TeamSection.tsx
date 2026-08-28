@@ -1,9 +1,16 @@
 import Image from "next/image";
 import { TextLink } from "@/components/home/TextLink";
 
-/** Roles here follow Birthwave's verified care-team roster, which corrects a
- *  role swap present in the prototype (it listed the paediatrician under
- *  gynaecology and vice versa). Names, order and layout follow the reference. */
+/** Roles here follow Birthwave's verified care-team roster (cross-checked
+ *  against the V1 project's `src/lib/team.ts`, itself sourced against
+ *  thebirthwave.com / user-approved facts), which corrects a role swap
+ *  present in the prototype (it listed the paediatrician under gynaecology
+ *  and vice versa). Dr. Amudha Varshini and Dr. Adithi Nair are added here
+ *  per the client's request to include them — their roles below are the
+ *  verified ones from that roster, not invented. Dr. Hamsini has no
+ *  verified role, credential or portrait anywhere in project sources; her
+ *  name only is shown, with a "role to be confirmed" note rather than a
+ *  guessed specialty — see docs/team-asset-gaps.md. */
 const doctors = [
   {
     odId: "doctor-bharathy",
@@ -24,6 +31,27 @@ const doctors = [
     // No verified portrait on file — see docs/asset-gaps.md.
     image: null,
     initials: "DS",
+  },
+  {
+    odId: "doctor-amudha",
+    name: "Dr. Amudha Varshini",
+    role: "Naturopathy & yoga",
+    image: null,
+    initials: "AV",
+  },
+  {
+    odId: "doctor-adithi",
+    name: "Dr. Adithi Nair",
+    role: "Pelvic floor therapy",
+    image: null,
+    initials: "AN",
+  },
+  {
+    odId: "doctor-hamsini",
+    name: "Dr. Hamsini",
+    role: "Role to be confirmed",
+    image: null,
+    initials: "H",
   },
 ];
 
@@ -74,12 +102,8 @@ export function TeamSection() {
           </article>
 
           <div className="grid grid-cols-2 gap-4 bp620:grid-cols-3 bp620:gap-[22px]">
-            {doctors.map((doctor, index) => (
-              <article
-                key={doctor.odId}
-                data-od-id={doctor.odId}
-                className={`group ${index === 2 ? "hidden bp620:block" : ""}`}
-              >
+            {doctors.map((doctor) => (
+              <article key={doctor.odId} data-od-id={doctor.odId} className="group">
                 <div className="relative mb-3.5 h-[180px] overflow-hidden rounded-[70px_14px_14px_14px] bg-od-sand transition-transform duration-300 group-hover:-translate-y-1 bp620:h-[210px]">
                   {doctor.image ? (
                     <Image

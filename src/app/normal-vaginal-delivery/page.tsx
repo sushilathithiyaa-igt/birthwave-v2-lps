@@ -7,6 +7,7 @@ import { RelatedCareBand } from "@/components/RelatedCareBand";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { ConversionSection } from "@/components/ConversionSection";
 import { BookTrigger } from "@/components/BookTrigger";
+import { BirthConceptComparison } from "@/components/BirthConceptComparison";
 import { landingPageBooking } from "@/config/landingPages";
 import { siteConfig } from "@/config/site";
 
@@ -42,11 +43,23 @@ const relatedCare = [
 const faqs = [
   {
     question: "What does normal vaginal delivery mean?",
-    answer: "Normal delivery generally refers to vaginal birth. Your clinician can help explain what is appropriate for your pregnancy.",
+    answer: "It is childbirth through the vagina rather than by Caesarean section. Labour and delivery can differ from one woman to another, and your clinician can help explain what is appropriate for your pregnancy.",
+  },
+  {
+    question: "Does planning for a vaginal delivery mean I will definitely have one?",
+    answer: "No. Labour cannot be predicted completely. Your care team monitors you and your baby throughout, and may recommend a change in the birth plan — including a Caesarean birth — when clinically appropriate. That is not a failure; it is part of responding to how your labour progresses.",
+  },
+  {
+    question: "What pain-relief options are available?",
+    answer: "Different pain-management options may be available during labour. Your doctor and maternity team can explain which options are appropriate and available to you.",
   },
   {
     question: "When should I start preparing?",
-    answer: "Preparation can begin early in pregnancy and be tailored as your pregnancy progresses.",
+    answer: "Preparation can begin early in pregnancy and be tailored as your pregnancy progresses, rather than waiting until the final weeks.",
+  },
+  {
+    question: "How is this connected to postpartum recovery?",
+    answer: "Your care doesn't end at delivery. Physical recovery, breastfeeding, pelvic health and emotional wellbeing all remain part of your care afterwards.",
   },
   {
     question: "Can I discuss natural birth and VBAC?",
@@ -85,11 +98,13 @@ export default function NormalVaginalDeliveryPage() {
         </div>
       </section>
 
+      <BirthConceptComparison className="bg-sand" />
+
       <FeatureBand
         odId="clarity"
         eyebrow="Clear, individual care"
         title="Every birth story needs room to be its own."
-        description="Normal vaginal delivery refers to vaginal birth. The path to it is individual, and care decisions should reflect your pregnancy, your health and your clinician's guidance."
+        description="Normal vaginal delivery is the route of birth — through the vagina rather than by Caesarean. The path to it is individual, and care decisions should reflect your pregnancy, your health and your clinician's guidance."
         points={["Ask questions early", "Prepare with guidance", "Keep options open", "Review as things change"]}
         imageSrc="/images/care/community-event.png"
         imageAlt="A warm gathering of The Birthwave families and care team"

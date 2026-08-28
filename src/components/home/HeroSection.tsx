@@ -24,12 +24,12 @@ export function HeroSection() {
             data-od-id="hero-heading"
             className="max-w-[650px] font-display text-[clamp(45px,13vw,62px)] leading-[1.01] font-semibold tracking-[-0.055em] text-od-ink bp620:text-[clamp(48px,5.55vw,78px)] bp620:tracking-[-0.06em]"
           >
-            Care for every stage of your journey into motherhood.
+            Care for every stage of a woman&rsquo;s life.
           </h1>
           <p className="mt-[26px] mb-8 max-w-[530px] text-base leading-[1.65] text-od-muted bp620:text-[18px]">
-            From preparing for pregnancy to pregnancy care, birth, postpartum recovery and your
-            baby&rsquo;s early care, The Birthwave brings medical expertise and holistic support
-            together around you.
+            The Birthwave supports women through changing stages of health and life &mdash; from
+            gynaecology, PCOS and fertility to pregnancy, birth, postpartum recovery and your
+            baby&rsquo;s early care. Medical expertise and holistic support, together around you.
           </p>
           <div className="flex flex-wrap items-center gap-[18px]">
             <Link

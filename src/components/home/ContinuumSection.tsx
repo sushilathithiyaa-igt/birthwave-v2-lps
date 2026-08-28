@@ -30,7 +30,7 @@ export function ContinuumSection() {
             </h2>
           </div>
           <p className="mt-[18px] max-w-[310px] text-od-muted bp1000:mt-0">
-            From planning to growing up, care that moves with your family.
+            From women&rsquo;s wellness to growing up, care that moves with your family.
           </p>
         </div>
 
