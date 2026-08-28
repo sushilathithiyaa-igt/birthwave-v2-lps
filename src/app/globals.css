@@ -94,6 +94,11 @@
   --breakpoint-bp620: 620px;
   --breakpoint-bp1000: 1000px;
   --breakpoint-bp1050: 1050px;
+  /* The unified header's full desktop nav (5 links + Call + Book
+     Appointment, including the long "Normal Vaginal Delivery" label)
+     doesn't fit at bp1000 — it wraps/overflows between ~1000-1280px, so
+     the header switches to the mobile menu until there's real room. */
+  --breakpoint-bp1280: 1280px;
 
   --ease-birthwave: cubic-bezier(0.22, 0.75, 0.2, 1);
   --ease-od: cubic-bezier(0.22, 0.8, 0.22, 1);

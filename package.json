@@ -9,6 +9,7 @@
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
     "verify:birthwave": "node scripts/verify-birthwave.mjs",
+    "verify:links": "node scripts/verify-links.mjs",
     "fidelity": "node scripts/fidelity.mjs"
   },
   "dependencies": {

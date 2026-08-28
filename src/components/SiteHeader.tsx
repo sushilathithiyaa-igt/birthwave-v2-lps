@@ -4,17 +4,21 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { homeNav, primaryNav, siteConfig } from "@/config/site";
+import { mainNav, siteConfig } from "@/config/site";
+import { useBookingSheet } from "@/components/BookingSheet";
+import { landingPageBooking } from "@/config/landingPages";
 
 export function SiteHeader() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const { open: openBookingSheet } = useBookingSheet();
 
-  // The homepage uses the approved brand-level navigation from the design
-  // handoff; service pages keep the sibling-service nav they were built with.
-  const isHome = pathname === "/";
-  const navItems = isHome ? homeNav : primaryNav;
+  // One global nav across all five review pages — Home and the four
+  // landing pages. The booking config carries page/service context into
+  // the enquiry flow no matter which page "Book Appointment" is clicked on.
+  const navItems = mainNav;
+  const bookingConfig = landingPageBooking[pathname ?? "/"] ?? landingPageBooking["/"];
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -45,7 +49,7 @@ export function SiteHeader() {
           : "bg-od-ivory/45 backdrop-blur-sm"
       }`}
     >
-      <div className="od-container flex h-[72px] items-center gap-4 bp620:h-[82px] bp1000:gap-9">
+      <div className="od-container flex h-[72px] items-center gap-4 bp620:h-[82px] bp1280:gap-9">
         <Link
           href="/"
           data-od-id="brand"
@@ -66,10 +70,10 @@ export function SiteHeader() {
 
         <nav
           aria-label="Primary navigation"
-          className="hidden items-center gap-7 text-sm whitespace-nowrap text-od-muted bp1000:flex"
+          className="hidden items-center gap-7 text-sm whitespace-nowrap text-od-muted bp1280:flex"
         >
           {navItems.map((item) => {
-            const active = isHome ? item.href === "/#top" : pathname === item.href;
+            const active = pathname === item.href;
             return (
               <Link
                 key={item.href}
@@ -87,35 +91,24 @@ export function SiteHeader() {
           })}
         </nav>
 
-        <div className="hidden items-center gap-2.5 bp1000:flex">
-          {isHome ? (
-            <a
-              href={siteConfig.whatsappHref}
-              target="_blank"
-              rel="noreferrer"
-              data-od-id="header-whatsapp"
-              data-event="whatsapp"
-              className="inline-flex min-h-[42px] items-center rounded-full border border-od-line bg-white/50 px-4 text-sm font-semibold whitespace-nowrap text-od-ink transition-colors hover:border-od-rose hover:bg-white"
-            >
-              WhatsApp
-            </a>
-          ) : (
-            <a
-              href={siteConfig.phoneHref}
-              data-event="header_call"
-              className="hidden min-h-[42px] items-center rounded-full border border-od-line bg-white/50 px-4 text-sm font-semibold whitespace-nowrap text-od-ink transition-colors hover:border-od-rose hover:bg-white xl:inline-flex"
-            >
-              Call
-            </a>
-          )}
+        <div className="hidden items-center gap-2.5 bp1280:flex">
           <a
-            href={isHome ? "/#contact" : "#book"}
+            href={siteConfig.phoneHref}
+            data-od-id="header-call"
+            data-event="header_call"
+            className="inline-flex min-h-[42px] items-center rounded-full border border-od-line bg-white/50 px-4 text-sm font-semibold whitespace-nowrap text-od-ink transition-colors hover:border-od-rose hover:bg-white"
+          >
+            Call
+          </a>
+          <button
+            type="button"
+            onClick={() => openBookingSheet(bookingConfig)}
             data-od-id="header-book-appointment"
             data-event="header_book"
             className="inline-flex min-h-[42px] items-center rounded-full bg-od-rose px-4 text-sm font-semibold whitespace-nowrap text-white shadow-[0_8px_18px_rgba(202,149,133,0.28)] transition-colors hover:bg-od-rose-deep"
           >
             Book Appointment
-          </a>
+          </button>
         </div>
 
         <button
@@ -125,7 +118,7 @@ export function SiteHeader() {
           aria-label={open ? "Close menu" : "Open menu"}
           data-od-id="mobile-menu-toggle"
           onClick={() => setOpen((value) => !value)}
-          className="grid h-11 w-11 place-items-center rounded-full bp1000:hidden"
+          className="grid h-11 w-11 place-items-center rounded-full bp1280:hidden"
         >
           <span className="relative block h-4 w-[22px]">
             <span
@@ -153,7 +146,7 @@ export function SiteHeader() {
         // `inert` keeps the collapsed menu out of the tab order and the
         // accessibility tree while still allowing the height transition.
         inert={!open}
-        className={`grid overflow-y-auto border-b border-od-line bg-od-ivory px-7 shadow-[0_15px_28px_rgba(40,36,33,0.1)] transition-[grid-template-rows] duration-300 bp1000:hidden ${
+        className={`grid overflow-y-auto border-b border-od-line bg-od-ivory px-7 shadow-[0_15px_28px_rgba(40,36,33,0.1)] transition-[grid-template-rows] duration-300 bp1280:hidden ${
           open ? "grid-rows-[1fr] py-5" : "grid-rows-[0fr] py-0"
         }`}
         style={{ maxHeight: open ? "calc(100dvh - 72px)" : "0" }}
@@ -170,13 +163,13 @@ export function SiteHeader() {
             </Link>
           ))}
           <a
-            href={isHome ? "/#contact" : "#book"}
-            data-od-id="mobile-book-appointment"
-            data-event="header_book"
+            href={siteConfig.phoneHref}
+            data-od-id="mobile-call"
+            data-event="header_call"
             onClick={() => setOpen(false)}
-            className="mt-3.5 block rounded-full bg-od-rose px-5 py-3 text-center text-sm font-semibold text-white"
+            className="mt-3.5 block border-b border-od-line py-3 text-[17px] text-od-ink"
           >
-            Book an Appointment
+            Call The Birthwave
           </a>
           <a
             href={siteConfig.whatsappHref}
@@ -189,6 +182,18 @@ export function SiteHeader() {
           >
             WhatsApp Birthwave
           </a>
+          <button
+            type="button"
+            onClick={() => {
+              setOpen(false);
+              openBookingSheet(bookingConfig);
+            }}
+            data-od-id="mobile-book-appointment"
+            data-event="header_book"
+            className="mt-2.5 block w-full rounded-full bg-od-rose px-5 py-3 text-center text-sm font-semibold text-white"
+          >
+            Book Appointment
+          </button>
         </div>
       </nav>
     </header>

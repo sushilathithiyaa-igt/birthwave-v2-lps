@@ -28,6 +28,8 @@ export const siteConfig = {
   },
 } as const;
 
+/** The five review-round routes, in order, for the sibling-route lists used
+ * outside the header (related-care cross-links, footer "Explore"). */
 export const primaryNav = [
   { label: "Pregnancy Care", href: "/pregnancy-antenatal-care" },
   { label: "Natural Birth", href: "/natural-birth" },
@@ -36,20 +38,21 @@ export const primaryNav = [
 ] as const;
 
 /**
- * The homepage carries the approved brand-level navigation from the design
- * handoff rather than the service-page nav. Every target resolves to a real
- * section on the homepage.
+ * ONE global navigation, used by the header on all five review pages —
+ * Home and the four landing pages. Every target is a real route.
  */
-export const homeNav = [
-  { label: "Home", href: "/#top" },
-  { label: "About", href: "/#about" },
-  { label: "Doctors", href: "/#team" },
-  { label: "Services", href: "/#services" },
-  { label: "Resources", href: "/#journey" },
-  { label: "Contact", href: "/#contact" },
+export const mainNav = [
+  { label: "Home", href: "/" },
+  { label: "Pregnancy Care", href: "/pregnancy-antenatal-care" },
+  { label: "Natural Birth", href: "/natural-birth" },
+  { label: "Normal Vaginal Delivery", href: "/normal-vaginal-delivery" },
+  { label: "VBAC", href: "/vbac-consultation" },
 ] as const;
 
+/** Footer "Explore" column — same five routes as `mainNav`, with the fuller
+ * page titles the footer has room for. */
 export const footerNav = [
   { label: "Home", href: "/" },
-  ...primaryNav,
+  { label: "Pregnancy & Antenatal Care", href: "/pregnancy-antenatal-care" },
+  ...primaryNav.slice(1),
 ] as const;

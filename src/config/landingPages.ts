@@ -8,6 +8,11 @@ import type { BookingConfig } from "@/components/BookingSheet";
  * everywhere a booking starts from a given page.
  */
 export const landingPageBooking: Record<string, BookingConfig> = {
+  "/": {
+    service: "General Enquiry",
+    sourcePage: "Homepage",
+    submitLabel: "Book an Appointment",
+  },
   "/pregnancy-antenatal-care": {
     service: "Pregnancy & Antenatal Care",
     sourcePage: "Pregnancy & Antenatal Care",
